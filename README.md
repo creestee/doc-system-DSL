@@ -29,8 +29,11 @@ To avoid receiving errors, a set of rules will be declared :
 
 </br>
 
-<center><img src="img_resources/derivation_tree_1.png" width=500>
-</center>
+<p align="center">
+  <a>
+    <img src="img_resources/derivation_tree_1.png">
+  </a>
+</p>
 
 <div align="center">
     <h4>Derivation tree for writing a chapter</h4>
