@@ -1,0 +1,27 @@
+document(report)
+title("Report Example")
+subject("Formal Languages")
+author("Author")
+
+table_of_contents(default)
+
+chapter("Introduction"):
+{^
+	subchapter("Problem Analysis"):
+	{^
+
+        table_name("Statistics")
+        table_row("Year", "Company", "Mean")
+        table_row("2001", "Sony", "4.1")
+
+        image("Face", /face.png)
+
+        list("For example", arabic_numbers):
+        {^
+            item("Item 1")
+            item("Item 2")
+            item("Item 3")
+        ^}
+
+	^}
+^}

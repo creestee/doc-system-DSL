@@ -1,0 +1,39 @@
+%import common.SIGNED_NUMBER    -> NUMBER
+%import common.WS
+%ignore WS
+
+start               : document
+
+document            : call_method
+call_method         : (method_name round_bracket_left method_parameter* round_bracket_right) | (method_name round_bracket_left method_parameter* round_bracket_right colon begin_method method_body end_method)
+
+method_body         : text+ call_method*
+method_name         : lower_case+ | method_name low_line method_name
+method_parameter    : parameter
+parameter           : file_name_parameter | string_parameter | extension_parameter | number_parameter | image_parameter | link_parameter | type_doc_parameter
+file_name_parameter : text_char+ NUMBER*
+string_parameter    : quotation_mark text quotation_mark
+extension_parameter : doc_extension_name
+number_parameter    : NUMBER+
+image_parameter     : string_parameter comma text period img_extension_name
+link_parameter      : text
+text                : text_char+ NUMBER* symbol*
+text_char           : lower_case | upper_case | symbol
+
+type_doc_parameter  : "report" | "resume"
+lower_case          : "a".."z"
+upper_case          : "A".."Z"
+doc_extension_name  : "docx" | "pdf"
+img_extension_name  : "jpeg" | "jpg" | "png"
+begin_method        : "{^"
+end_method          : "^}"
+symbol              : "(" | "{" | "}" | ")" | ":" | "\"" | "," | "_" | "?" | "/" | "-" | "."
+round_bracket_left  : "("
+round_bracket_right : ")"
+curly_bracket_left  : "{"
+curly_bracket_right : "}"
+colon               : ":"
+comma               : ","
+low_line            : "_"
+quotation_mark      : "\""
+period              : "."
