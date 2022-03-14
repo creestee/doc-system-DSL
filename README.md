@@ -49,3 +49,11 @@ python main.py
 ## TODOs
 
 * Output AST as JSON or other usable format instead of STDOUT
+
+## Authors
+
+* Cristian Ionel `cristian.ionel1@isa.utm.md`
+* Constantina Gîlca `constantina.gilca@isa.utm.md`
+* Cristian-Sergiu Tafune `cristian-sergiu.tafune@isa.utm.md`
+* Silviu Lozovanau `silviu.lozovanu@isa.utm.md`
+* Victor Botnaru `victor.botnaru1@isa.utm.md`
