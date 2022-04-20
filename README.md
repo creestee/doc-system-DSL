@@ -1,6 +1,6 @@
 <p align="center">
   <a>
-    <img src=img_resources/lark_logo.png alt="Logo" width="200" height="200">
+    <img src=img_resources/38646335.png alt="Logo" width="200" height="200">
   </a>
 </p>
 
