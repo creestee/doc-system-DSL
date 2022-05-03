@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="page" id="page1">
+        <h1>{{ data['subject'] }}</h1>
+        <p class="bold" id="document-type">{{ data['document']['type'] }}</p>
+        <div id="author">
+            <p  class="bold">Author</p>
+            <p>{{ data['author'] }}</p>
+        </div>
+    </div>
+
+    <div class="page" id="page2">
+        <h2 id="index-title">Table of contents</h3>
+        <!-- {% for el in data.keys() %}
+            {% if el == 'chapter' %}
+                <p>{{ loop.index.__repr__() + '.' + data[el]['title']}}</p>
+                {% for sel in data[el].keys() %}
+                    {% if sel == 'subchapter' %}
+                        <p>{{ loop.index.__repr__() + '.' + data[el][sel]['title'] }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %} -->
+        {% set ns = namespace(chap1level = 0) %}
+        {% for key1, value1 in data.items() %}
+            {% if key1.startswith('chapter') %}
+                {% set ns.chap1level = ns.chap1level + 1 %}
+                <p class="index-1-level bold">{{ '{}.{}{} {}'.format(ns.chap1level.__repr__(), value1['title'], '.'*140, '3') }}</p>
+                {% set ns.chap2level = 0 %}
+                {% for key2, value2 in value1['content'].items() %}
+                    {% if key2.startswith('subchapter') %}
+                        {% set ns.chap2level = ns.chap2level + 1 %}
+                        <p class="index-2-level">{{ '{}.{} {}{} {}'.format(ns.chap1level.__repr__(), ns.chap2level.__repr__(), value2['title'], '.' * (140 - value2['title'].__len__()), '3') }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </div>
+
+        <div class="page" id="page3">
+        <h2>{{ data['chapter']['title'] }}</h2>
+        <p>{{ data['chapter']['content']['text'] }}</p>
+        <h3>{{ data['chapter']['content']['subchapter']['title'] }}</h3>
+        <p>{{ data['chapter']['content']['subchapter']['content']['text'] }}</p>
+        <table>
+            <caption>{{ data['chapter']['content']['subchapter']['content']['table']['name'] }}</caption>
+            {% for el in data['chapter']['content']['subchapter']['content']['table']: %}
+                {% if 'row' in el %}
+                    <tr>
+                    {% if loop.index0 == 0 %}
+                        {% for it in data['chapter']['content']['subchapter']['content']['table'][el] %}
+                            <th>{{ it }}</th>
+                        {% endfor %}
+                    {% endif %}
+                    {% if loop.index0 > 0 %}
+                        {% for it in data['chapter']['content']['subchapter']['content']['table'][el] %}
+                            <td>{{ it }}</td>
+                        {% endfor %}
+                    {% endif %}
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <img src="{{ data['chapter']['content']['subchapter']['content']['image']['src'] }}" alt="">
+        <p class="image-title">{{ data['chapter']['content']['subchapter']['content']['image']['name']}}</p>
+        <p>{{ data['chapter']['content']['subchapter']['content']['list']['title'] }}</p>
+        <ol>
+            {% for it in data['chapter']['content']['subchapter']['content']['list']['items'] %}
+                <li>{{ it }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+</body>
+</html>

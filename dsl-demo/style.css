@@ -1,0 +1,90 @@
+@page {
+    size: A4;
+    margin: 10mm;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    width: 200mm;
+    height: 287mm;
+}
+
+* :not(.page){
+    margin-bottom: 1em;
+}
+
+#page1 {
+    padding-top: 60mm;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+.bold {
+    font-weight: bold;
+}
+
+#document-type {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#author {
+    margin-left: 40mm;
+    margin-top: 50mm;
+}
+
+#author :nth-child(2) {
+    margin-left: 10mm;
+    margin-top: 1.5em;
+    color: gray;
+}
+
+#index-title {
+    margin-top: 10mm;
+}
+
+.index-1-level {
+    margin-left: 10mm;
+}
+
+.index-2-level {
+    margin-left: 15mm;
+}
+
+img, ol, ul, table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    width: 80mm;
+    height: 80mm;
+}
+
+.image-title {
+    text-align: center;
+}
+
+
+table, th, td {
+    border:1px solid black;
+    border-collapse:collapse;
+    padding: 0.3em;
+}
+
+ol {
+    margin-left: 10mm;
+}
+
+ol li {
+    list-style: decimal;
+    list-style-position: inside;
+}
