@@ -1,3 +1,56 @@
+{% macro chapter_title(chapter_title) %}
+    <h2>{{ chapter_title }}</h2>
+{% endmacro %}
+
+{% macro chapter_text(chapter_text) %}
+    <p>{{ chapter_text }}</p>
+{% endmacro %}
+
+{% macro subchapter_title(subchapter_title) %}
+    <h3>{{ subchapter_title }}</h3>
+{% endmacro %}
+
+{% macro subchapter_text(subchapter_text) %}
+    <p>{{ subchapter_text }}</p>
+{% endmacro %}
+
+{% macro image(image_dict) %}
+    <img src="{{ image_dict['src'] }}" alt="">
+    <p class="image-title">{{ image_dict['name']}}</p>
+{% endmacro %}
+
+{% macro table(table_dict) %}
+    <table>
+        <caption>{{ table_dict['name'] }}</caption>
+        {% for row in table_dict['rows']: %}
+            <tr>
+            {% if loop.index0 == 0 %}
+                {% for it in row %}
+                    <th>{{ it }}</th>
+                {% endfor %}
+            {% endif %}
+            {% if loop.index0 > 0 %}
+                {% for it in row %}
+                    <td>{{ it }}</td>
+                {% endfor %}
+            {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endmacro %}
+
+{% macro list_(list_dict) %}
+    <p>{{ list_dict['title'] }}</p>
+    <ol>
+        {% for it in list_dict['items'] %}
+            <li>{{ it }}</li>
+        {% endfor %}
+    </ol>
+{% endmacro %}
+
+{% macro vacia() %}
+{% endmacro %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +58,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ data['document']['type'] }}</title>
 </head>
 <body>
     <div class="page" id="page1">
@@ -33,50 +86,62 @@
         {% for key1, value1 in data.items() %}
             {% if key1.startswith('chapter') %}
                 {% set ns.chap1level = ns.chap1level + 1 %}
-                <p class="index-1-level bold">{{ '{}.{}{} {}'.format(ns.chap1level.__repr__(), value1['title'], '.'*140, '3') }}</p>
+                <p class="index-1-level bold">{{ '{}.{}{} {}'.format(ns.chap1level.__repr__(), value1['title'], '.'*140, (ns.chap1level + 1).__repr__()) }}</p>
                 {% set ns.chap2level = 0 %}
                 {% for key2, value2 in value1['content'].items() %}
                     {% if key2.startswith('subchapter') %}
                         {% set ns.chap2level = ns.chap2level + 1 %}
-                        <p class="index-2-level">{{ '{}.{} {}{} {}'.format(ns.chap1level.__repr__(), ns.chap2level.__repr__(), value2['title'], '.' * (140 - value2['title'].__len__()), '3') }}</p>
+                        <p class="index-2-level">{{ '{}.{} {}{} {}'.format(ns.chap1level.__repr__(), ns.chap2level.__repr__(), value2['title'], '.' * (140 - value2['title'].__len__()), (ns.chap2level + ns.chap1level + 1).__repr__()) }}</p>
                     {% endif %}
                 {% endfor %}
             {% endif %}
         {% endfor %}
     </div>
 
-        <div class="page" id="page3">
-        <h2>{{ data['chapter']['title'] }}</h2>
-        <p>{{ data['chapter']['content']['text'] }}</p>
-        <h3>{{ data['chapter']['content']['subchapter']['title'] }}</h3>
-        <p>{{ data['chapter']['content']['subchapter']['content']['text'] }}</p>
-        <table>
-            <caption>{{ data['chapter']['content']['subchapter']['content']['table']['name'] }}</caption>
-            {% for el in data['chapter']['content']['subchapter']['content']['table']: %}
-                {% if 'row' in el %}
-                    <tr>
-                    {% if loop.index0 == 0 %}
-                        {% for it in data['chapter']['content']['subchapter']['content']['table'][el] %}
-                            <th>{{ it }}</th>
+        <!-- <div class="page" id="page3"> -->
+        <div class="pagess">
+        {% for key in data %}
+            {% if key.startswith("chapter") %}
+                {{ chapter_title(data[key]['title']) }}
+                {% for chkey in data[key] %}
+                    {% if chkey == "content" %}
+                        {% for chcontentkey in data[key]['content'] %}
+                            {% if chcontentkey.startswith("text") %}
+                                {{ chapter_text(data[key]['content'][chcontentkey]) }}
+                            {% endif %}
+                            {% if chcontentkey.startswith("image") %}
+                                {{ image(data[key]['content'][chcontentkey]) }}
+                            {% endif %}
+                            {% if chcontentkey.startswith("table") %}
+                                {{ table(data[key]['content'][chcontentkey]) }}
+                            {% endif %}
+                            {% if chcontentkey.startswith("list") %}
+                                {{ list_(data[key]['content'][chcontentkey]) }}
+                            {% endif %}
+
+                            {% if chcontentkey.startswith("subchapter") %}
+                                {{ subchapter_title(data[key]['content'][chcontentkey]['title']) }}
+                                {% for sckey in data[key]['content'][chcontentkey]['content'] %}            
+                                    {% if sckey.startswith("text") %}
+                                        {{ subchapter_text(data[key]['content'][chcontentkey]['content'][sckey]) }}
+                                    {% endif %}
+                                    {% if sckey.startswith("image") %}
+                                        {{ image(data[key]['content'][chcontentkey]['content'][sckey]) }}
+                                    {% endif %}
+                                    {% if sckey.startswith("table") %}
+                                        {{ table(data[key]['content'][chcontentkey]['content'][sckey]) }}
+                                    {% endif %}
+                                    {% if sckey.startswith("list") %}
+                                        {{ list_(data[key]['content'][chcontentkey]['content'][sckey]) }}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}        
                         {% endfor %}
                     {% endif %}
-                    {% if loop.index0 > 0 %}
-                        {% for it in data['chapter']['content']['subchapter']['content']['table'][el] %}
-                            <td>{{ it }}</td>
-                        {% endfor %}
-                    {% endif %}
-                    </tr>
-                {% endif %}
-            {% endfor %}
-        </table>
-        <img src="{{ data['chapter']['content']['subchapter']['content']['image']['src'] }}" alt="">
-        <p class="image-title">{{ data['chapter']['content']['subchapter']['content']['image']['name']}}</p>
-        <p>{{ data['chapter']['content']['subchapter']['content']['list']['title'] }}</p>
-        <ol>
-            {% for it in data['chapter']['content']['subchapter']['content']['list']['items'] %}
-                <li>{{ it }}</li>
-            {% endfor %}
-        </ol>
+                {% endfor %}
+           {% endif %}
+        {% endfor %}
+
     </div>
 
 </body>

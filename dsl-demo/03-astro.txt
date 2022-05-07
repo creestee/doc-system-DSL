@@ -1,0 +1,184 @@
+{^
+    document("astronomy", "pdf")
+    title("Astronomy")
+    subject("Science")
+    author("Edwin Hubble")
+    table_of_contents(default)
+    chapter("Astronomy"):
+    {^
+        Nunc congue nisi vitae suscipit tellus mauris. Mollis nunc sed id semper risus in hendrerit. Pretium nibh ipsum consequat 
+        nisl vel pretium. Lorem ipsum dolor sit amet consectetur adipiscing elit duis tristique. Pretium fusce id velit ut tortor 
+        pretium viverra. Cursus  massa tincidunt dui ut ornare lectus. Aliquet nibh praesent tristique magna sit amet purus 
+        gravida. Elementum facilisis leo vel fringilla est ullamcorper eget nulla facilisi. Eros in cursus turpis massa tincidunt 
+        dui ut ornare. Commodo viverra maecenas accumsan lacus vel facilisis. Sed nisi lacus sed viverra tellus in hac.
+        image("SolarSystem","img/ss1.jpg")
+        subchapter("History"):
+        {^
+                Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Eget est lorem ipsum dolor. 
+                Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Dui faucibus in ornare quam. Condimentum mattis pellentesque 
+                id nibh tortor. Facilisi cras fermentum odio eu feugiat pretium nibh. Leo vel fringilla est ullamcorper eget nulla facilisi
+                etiam dignissim. Ultricies mi quis hendrerit dolor magna eget est lorem ipsum. In hac habitasse platea dictumst quisque 
+                sagittis purus sit amet. Adipiscing enim eu turpis egestas pretium. Pellentesque id nibh tortor id aliquet lectus. Laoreet
+                non curabitur gravida arcu ac tortor. Pharetra sit amet aliquam id. Viverra nibh cras pulvinar mattis nunc sed blandit 
+                libero volutpat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
+                table("Countries"):
+                {^
+                    table_row("Century", "Europe", "The Americas", "Asia", "Other")
+                    table_row("XVII", "60%", "20%", "15%", "3%")
+                    table_row("XVIII", "65%", "30%", "20%", "6%")
+                    table_row("XIX", "55%", "30%", "20%", "5%")
+                    table_row("XX", "57%", "20%", "23%", "15%")
+                    table_row("XXI", "35%", "50%", "20%", "18%")
+                ^}
+                image("Earth","img/ss2.jpg")
+                list("Planets:", "arabic_numbers"):
+                {^
+                    item("Mercury")
+                    item("Venus")
+                    item("Earth")
+                    item("Mars")
+                    item("Jupiter")
+                    item("Saturn")
+                    item("Uranus")
+                    item("Neptune")
+                ^}
+                Tempor commodo ullamcorper a lacus. Adipiscing tristique risus nec feugiat in fermentum. Vel fringilla est ullamcorper eget 
+                nulla. Sem viverra aliquet eget sit amet tellus cras adipiscing. In vitae turpis massa sed elementum tempus egestas sed sed. 
+                In pellentesque massa placerat duis ultricies lacus. Bibendum enim facilisis gravida neque. Vestibulum sed arcu non odio 
+                euismod lacinia at quis. Semper eget duis at tellus at urna. Etiam erat velit scelerisque in dictum non consectetur a. Nec 
+                feugiat nisl pretium fusce. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Adipiscing commodo elit at 
+                imperdiet dui accumsan sit. At varius vel pharetra vel turpis nunc eget. Nibh cras pulvinar mattis nunc.
+                table("Distance"):
+                {^
+                    table_row("Size", "Weighs")
+                    table_row("8 light years", "8 solar masses")
+                ^}
+                image("Planets", "img/ss3.jpg")
+                list("Habitable", "arabic_numbers"):
+                {^
+                    item("Earth.")
+                    item("Mars.")
+                ^}
+        ^}
+        subchapter("Astronomers"):
+        {^
+                Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Eget est lorem ipsum dolor. 
+                Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Dui faucibus in ornare quam. Condimentum mattis pellentesque 
+                id nibh tortor. Facilisi fermentum odio eu feugiat pretium nibh. Leo vel fringilla est ullamcorper eget nulla facilisi
+                etiam dignissim. Ultricies mi quis ht dolor magna eget est lorem ipsum. In hac habitasse platea dictumst quisque 
+                sagittis purus sit amet. Adipiscing enim eu turpis egestas pretium. Pellentesque id nibh tortor id aliquet lectus. Laoreet
+                non curabitur  arcu ac tortor. Pharetra sit amet aliquam id. Viverra nibh cras pulvinar mattis nunc sed blandit 
+                libero volutpat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
+                image("Galileo","img/ast1.jpg")
+                list("Planets3:", "arabic_numbers"):
+                {^
+                    item("Galileo")
+                    item("Kepler")
+                    item("Newton")
+                    item("Hubble")
+                ^}
+                Tempor commodo ullamcorper a lacus. Adipiscing risus nec feugiat in fermentum. Vel fringilla est ullamcorper eget 
+                nulla. Sem viverra aliquet eget sit amet tellus cras adipiscing. In vitae turpis massa sed elementum tempus egestas sed sed. 
+                In pellentesqu ultricies lacus. Bibendum enim facilisis gravida neque. Vestibulum sed arcu non odio. 
+                euismod lacinia at quis. Semper eget duis at tellus at urna. Etiam erat velit scelerisque in dictum non consectetur a. Nec 
+                feugiat nisl fusce. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Adipiscing commodo elit at 
+                imperdiet dui accumsan sit. At varius vel pharetra vel turpis nunc eget. Nibh cras pulvinar mattis nunc.
+                image("Kepler", "img/ast2.jpg")
+                Vel fringilla est ullamcorper eget 
+                nulla. Sem viverra aliquet eget sit amet tellus cras adipiscing. In vitae turpis massa sed elementum tempus egestas sed sed. 
+                In pellentesqu ultricies lacus. Bibendum enim facilisis gravida neque. Vestibulum sed arcu non odio. 
+                euismod lacinia at quis. Semper eget duis at tellus at urna. Etiam erat velit scelerisque in dictum non consectetur a. Nec 
+                feugiat nisl fusce. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Adipiscing commodo elit at 
+                imperdiet dui accumsan sit. At varius vel pharetra vel turpis nunc eget. Nibh cras pulvinar mattis nunc.
+                image("Newton", "img/ast3.jpg")
+        ^}
+        subchapter("Discovering"):
+        {^
+                Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Eget est lorem ipsum dolor. 
+                Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Dui faucibus in ornare quam. Condimentum mattis pellentesque 
+                id nibh tortor. Facilisi cras fermentum odio eu feugiat pretium nibh. Leo vel fringilla est ullamcorper eget nulla facilisi
+                etiam dignissim. Ultricies mi quis hendrerit dolor magna eget est lorem ipsum. In hac habitasse platea dictumst quisque 
+                sagittis purus sit amet. Adipiscing enim eu turpis egestas pretium. Pellentesque id nibh tortor id aliquet lectus. Laoreet
+                non curabitur  arcu ac tortor. Pharetra sit amet aliquam id. Viverra nibh cras pulvinar mattis nunc sed blandit 
+                libero volutpat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
+                table("Countries"):
+                {^
+                    table_row("Century", "Europe", "The Americas", "Asia", "Other")
+                    table_row("XVII", "60%", "20%", "15%", "3%")
+                    table_row("XVIII", "65%", "30%", "20%", "6%")
+                    table_row("XIX", "55%", "30%", "20%", "5%")
+                    table_row("XX", "57%", "20%", "23%", "15%")
+                    table_row("XXI", "35%", "50%", "20%", "18%")
+                ^}
+                image("Jupiterstorm","img/ss4.jpg")
+                list("Planets:", "arabic_numbers"):
+                {^
+                    item("Mercury")
+                    item("Venus")
+                    item("Earth")
+                    item("Mars")
+                    item("Jupiter")
+                    item("Saturn")
+                    item("Uranus")
+                    item("Neptune")
+                ^}
+                Tempor commodo ullamcorper a lacus. Adipiscing tristique risus nec feugiat in fermentum. Vel fringilla est ullamcorper eget 
+                nulla. Sem viverra aliquet eget sit amet tellus cras adipiscing. In vitae turpis massa sed elementum tempus egestas sed sed. 
+                In pellentesque massa placerat duis ultricies lacus. Bibendum enim facilisis gravida neque. Vestibulum sed arcu non odio 
+                euismod lacinia at quis. Semper eget duis at tellus at urna. Etiam erat velit scelerisque in dictum non consectetur a. Nec 
+                feugiat nisl fusce. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Adipiscing commodo elit at 
+                imperdiet dui accumsan sit. At varius vel pharetra vel turpis nunc eget. Nibh cras pulvinar mattis nunc.
+                image("Saturnrings", "img/ss7.jpg")
+                table("Distance"):
+                {^
+                    table_row("Size", "Weighs")
+                    table_row("8 light years", "8 solar masses")
+                ^}
+                image("Sky", "img/ss6.jpg")
+                list("Habitable", "arabic_numbers"):
+                {^
+                    item("Earth.")
+                    item("Mars.")
+                ^}
+        ^}
+        subchapter("Galaxy"):
+        {^
+                Volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend. Eget est lorem ipsum dolor. 
+                Pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Dui faucibus in ornare quam. Condimentum mattis pellentesque 
+                id nibh tortor. Facilisi cras fermentum odio eu feugiat pretium nibh. Leo vel fringilla est ullamcorper eget nulla facilisi
+                etiam dignissim. Ultricies mi quis ht dolor magna eget est lorem ipsum. In hac habitasse platea dictumst quisque 
+                sagittis purus sit amet. Adipiscing enim eu turpis egestas pretium. Pellentesque id nibh tortor id aliquet lectus. Laoreet
+                non curabitur  arcu ac tortor. Pharetra sit amet aliquam id. Viverra nibh cras pulvinar mattis nunc sed blandit 
+                libero volutpat. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan.
+                table("GalSizes"):
+                {^
+                    table_row("Size", "MilkyWay", "Andromeda", "Mg61", "Mg67")
+                    table_row("SM", "32.678", "7.890", "89.974", "43.768")
+                    table_row("Ly", "4.736.826", "328.790.457", "4.327.869", "9.087.098")
+                    table_row("Em", "2.768.034", "438.764", "3.427.878", "3.426.789")
+                ^}
+                image("Andromeda","img/gx1.jpg")
+                list("Galaxies:", "arabic_numbers"):
+                {^
+                    item("Milky Way")
+                    item("Andromeda")
+                    item("MG61")
+                    item("Mg67")
+                ^}
+                Tempor commodo ullamcorper a lacus. Adipiscing risus nec feugiat in fermentum. Vel fringilla est ullamcorper eget 
+                nulla. Sem viverra aliquet eget sit amet tellus cras adipiscing. In vitae turpis massa sed elementum tempus egestas sed sed. 
+                In pellentesque massa placerat duis ultricies lacus. Bibendum enim facilisis gravida neque. Vestibulum sed arcu non odio 
+                euismod lacinia at quis. Semper eget duis at tellus at urna. Etiam erat velit scelerisque in dictum non consectetur a. Nec 
+                feugiat nisl fusce. Diam ut venenatis tellus in metus vulputate eu scelerisque felis. Adipiscing commodo elit at 
+                imperdiet dui accumsan sit. At varius vel pharetra vel turpis nunc eget. Nibh cras pulvinar mattis nunc.
+                image("Mg61 ", "img/gx2.jpg")
+                table("Distance"):
+                {^
+                    table_row("Size", "Weighs")
+                    table_row("100000 Ly", "100M solar masses")
+                ^}
+                image("Ring", "img/gx3.jpg")
+        ^}
+
+    ^}
+^}
